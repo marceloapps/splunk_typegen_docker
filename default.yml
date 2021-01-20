@@ -2,7 +2,7 @@
 splunk:
   conf:
     - key: user-prefs
-      value:
+      user-prefs:
         directory: /opt/splunk/etc/users/admin/user-prefs/local
         content:
           general:
