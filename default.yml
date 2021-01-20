@@ -1,5 +1,7 @@
 ---
 splunk:
+  app_paths:
+    default: /opt/splunk/etc/apps
   conf:
     - key: user-prefs
       value:
@@ -8,3 +10,11 @@ splunk:
           general:
             default_namespace: splunk_typegen
             search_syntax_highlighting: dark
+    - key: indexes
+          value:
+            directory: /opt/splunk/etc/system/local
+            content:
+              test:
+                homePath: $SPLUNK_DB/test/db
+                coldPath: $SPLUNK_DB/test/colddb
+                thawedPath: $SPLUNK_DB/test/thaweddb            

@@ -9,6 +9,6 @@ services:
       - SPLUNK_PASSWORD=1234Abc@
       - SPLUNK_ROLE=splunk_standalone
       - SPLUNK_HOME=/opt/splunk
-      - SPLUNK_APPS_URL=https://github.com/marceloapps/splunk_typegen_docker/blob/master/splunk_typegen.tgz
+      - SPLUNK_APPS_URL=https://github.com/marceloapps/splunk_typegen_docker/raw/master/splunk_typegen.spl
     ports:
       - 8000:8000
