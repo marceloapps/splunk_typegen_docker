@@ -1,0 +1,10 @@
+---
+splunk:
+  conf:
+    - key: user-prefs
+      value:
+        directory: /opt/splunk/etc/users/admin/user-prefs/local
+        content:
+          general:
+            default_namespace: splunk_typegen
+            search_syntax_highlighting: dark

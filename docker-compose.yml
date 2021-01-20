@@ -1,0 +1,20 @@
+version: "3.6"
+
+services:
+  splunkenterprise:
+    image: splunk/splunk:7.3.0
+    hostname: splunkenterprise
+    container_name: splunkenterprise
+    environment:
+      - SPLUNK_ROLE=splunk_standalone
+      - SPLUNK_HOME=/opt/splunk
+      - SPLUNK_ANSIBLE_HOME=/opt/ansible
+      - ANSIBLE_USER=ansible
+      - ANSIBLE_GROUP=ansible
+      - CONTAINER_ARTIFIACT_DIR=/opt/container_artifact
+      - SPLUNK_START_ARGS=--accept-license
+      - SPLUNK_APPS_URL=http://blablabla
+      - SPLUNK_PASSWORD=1234
+      - SPLUNK_DEFAULTS_URL=http://blablabla
+    ports:
+      - 8000:8000
