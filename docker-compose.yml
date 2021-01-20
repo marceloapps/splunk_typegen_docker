@@ -10,5 +10,11 @@ services:
       - SPLUNK_ROLE=splunk_standalone
       - SPLUNK_HOME=/opt/splunk
       - SPLUNK_APPS_URL=https://github.com/marceloapps/splunk_typegen_docker/raw/master/splunk_typegen.spl
+      - SPLUNK_LICENSE_URI=Free
+      - SPLUNK_IGNORE_LICENSE=true
+      - SPLUNK_DEFAULTS_URL=https://github.com/marceloapps/splunk_typegen_docker/raw/master/default.yml
+      - SPLUNK_DEFAULTS_HTTP_MAX_TIMEOUT=50
+      - SPLUNK_DEFAULTS_HTTP_MAX_RETRIES=3
+      - SPLUNK_DEFAULTS_HTTP_MAX_DELAY=10
     ports:
       - 8000:8000
