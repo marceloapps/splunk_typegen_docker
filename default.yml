@@ -7,4 +7,14 @@ splunk:
         content:
           general:
             default_namespace: splunk_typegen
-            search_syntax_highlighting: dark       
+            search_syntax_highlighting: dark
+    - key: web
+      web:
+        directory: /opt/splunk/etc/system/local
+        content:
+          settings:
+            loginFooterOption: custom
+            loginFooterText: <b>Powered by Techstack</b>
+            login_content: I am just a container and will die soon ;P
+            loginDocumentTitleOption: custom
+            loginDocumentTitleText: Splunk Typegen Container    
