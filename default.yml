@@ -18,11 +18,3 @@ splunk:
             login_content: I am just a container and will die soon ;P
             loginDocumentTitleOption: custom
             loginDocumentTitleText: Splunk Typegen Container    
-    - key: indexes
-      value:
-        directory: /opt/splunk/etc/system/local
-        content:
-          test:
-            homePath: $SPLUNK_DB/test/db
-            coldPath: $SPLUNK_DB/test/colddb
-            thawedPath: $SPLUNK_DB/test/thaweddb
