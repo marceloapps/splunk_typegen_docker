@@ -1,0 +1,1 @@
+FROM splunk:7.3.0
