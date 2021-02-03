@@ -18,3 +18,5 @@ splunk:
             login_content: I am just a container and will die soon ;P
             loginDocumentTitleOption: custom
             loginDocumentTitleText: Splunk Typegen Container    
+            dashboard_html_allow_embeddable_content: true
+            dashboard_html_allow_iframes: true
