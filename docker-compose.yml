@@ -2,7 +2,7 @@ version: "3.6"
 
 services:
   so1:
-    image: splunk_typegen:latest #${SPLUNK_IMAGE:-splunk/splunk:7.3.4}
+    image: marceloarakaki/splunk:latest
     container_name: so1
     environment:
       - SPLUNK_START_ARGS=--accept-license
