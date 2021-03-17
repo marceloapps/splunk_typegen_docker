@@ -7,7 +7,7 @@ Imagem docker baseada no Splunk 7.3.4 que instala um splunk standalone no local 
 Caso necessite alterar o app padrão, seus arquivos estão dentro de app/splunk_typegen. Para que a imagem funcione bem, rode o seguinte comando e será gerado um tgz do app. Este tgz será extraído no diretório de apps do Splunk.
 
 ```bash
-tar -czvf splunk_typegen_v1.tgz ../apps/splunk_typegen
+tar -czvf splunk_typegen.tgz ../app/splunk_typegen/
 ```
 
 Feito isso, compile a imagem:

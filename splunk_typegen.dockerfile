@@ -12,5 +12,5 @@ ENV SPLUNK_DEFAULTS_HTTP_MAX_DELAY=10
 
 COPY conf_files/user-prefs.conf /opt/splunk/etc/users/admin/user-prefs/local/
 COPY conf_files/web.conf /opt/splunk/etc/system/local/
-ADD app/splunk_typegen.tgz /opt/splunk/etcs/apps/
+ADD app/splunk_typegen.tgz /opt/splunk/etc/apps/
 EXPOSE 8000
