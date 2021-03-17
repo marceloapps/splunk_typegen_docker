@@ -1,0 +1,28 @@
+<dashboard theme="dark" hideChrome="true">
+  <label>TypeGen</label>
+  <description>Use essa página para carregar um exemplo do seu arquivo de log para gerar um sourcetype (dicionário) que o Splunk entenda e indexe seus dados da melhor maneira possível.</description>
+  <row>
+    <panel>
+      <title></title>
+      <html>
+        <div>
+          <p>Passo a passo para utilização até a geração do sourcetype que deverá ser passado via chamado</p>
+          <br/>
+          <ul>
+            <li>Clique em Select File (não selecione um arquivo grande, use um máximo de 10mb) e depois em Next</li>
+            <li>Clique em Select Source Type e veja se já não existe uma configuração feita para o seu tipo de log</li>
+            <li>Caso não exista, configure a quebra de eventos por um regex (caso não seja Json)</li>
+            <li>Caso tenha configurado a quebra de eventos, configure também o seu timestamp (utilize o advanced)</li>
+            <li>Valide que do lado direito seus eventos serão indexados de maneira correta no Splunk</li>
+            <li>Abra a aba "advanced" e clique em "copy to clipboard". Esta é a configuração a ser passada no chamado!</li>
+          </ul>
+          <br/>
+          <p><b>Atenção!</b> Quebra de eventos e formatação de timestamp são extremamente importantes, não deixe de configurar</p>
+        </div>
+        <center>
+          <iframe src="http://localhost:8000/en-GB/manager/splunk_typegen/adddatamethods/selectsource?input_mode=0" width="100%" height="850px" style="margin-top:-47px"/>
+        </center>
+      </html>
+    </panel>
+  </row>
+</dashboard>

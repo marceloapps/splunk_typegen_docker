@@ -1,18 +1,54 @@
-version: "3.6"
+version: '3'
 
 services:
-  so1:
-    image: marceloarakaki/splunk:latest
-    container_name: so1
-    environment:
-      - SPLUNK_START_ARGS=--accept-license
-      - SPLUNK_LICENSE_URI=Free
-      - SPLUNK_PASSWORD=1234Abc@
-      - SPLUNK_ROLE=splunk_standalone
-      - SPLUNK_HOME=/opt/splunk
-      - SPLUNK_IGNORE_LICENSE=true
-      - SPLUNK_DEFAULTS_HTTP_MAX_TIMEOUT=50
-      - SPLUNK_DEFAULTS_HTTP_MAX_RETRIES=3
-      - SPLUNK_DEFAULTS_HTTP_MAX_DELAY=10
+  typegen_nginx:
+    build:
+      dockerfile: nginx.dockerfile
+      context: .
+    image: typegen_nginx
+    container_name: typegen_nginx
     ports:
-      - 8000:8000
+      - 80:80
+    depends_on: 
+      - "typegen_splunk1"
+      - "typegen_splunk2"
+      - "typegen_splunk3"
+    networks: 
+      - techstack_nets      
+
+  typegen_splunk1:
+    build:
+      dockerfile: splunk_typegen.dockerfile
+      context: .
+    image: splunk_typegen #marceloarakaki/splunk:latest
+    container_name: typegen1
+    ports:
+      - "8000"
+    networks: 
+      - techstack_nets
+
+  typegen_splunk2:
+    build:
+      dockerfile: splunk_typegen.dockerfile
+      context: .
+    image: splunk_typegen #marceloarakaki/splunk:latest
+    container_name: typegen2
+    ports:
+      - "8000"
+    networks: 
+      - techstack_nets      
+
+  typegen_splunk3:
+    build:
+      dockerfile: splunk_typegen.dockerfile
+      context: .
+    image: splunk_typegen #marceloarakaki/splunk:latest
+    container_name: typegen3
+    ports:
+      - "8000"
+    networks: 
+      - techstack_nets      
+
+networks:
+  techstack_nets:
+    driver: bridge
